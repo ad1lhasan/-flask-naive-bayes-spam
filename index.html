@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spam Detector</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input { width: 300px; padding: 10px; }
+        button { padding: 10px 20px; background-color: blue; color: white; border: none; }
+        h2 { color: green; }
+        h3 { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Spam Message Detector</h1>
+    <form action="/predict" method="post">
+        <input type="text" name="message" placeholder="Enter your message..." required>
+        <button type="submit">Check</button>
+    </form>
+    
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <h3>Message: "{{ message }}"</h3>
+    {% endif %}
+</body>
+</html>
